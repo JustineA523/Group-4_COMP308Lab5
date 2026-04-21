@@ -92,4 +92,4 @@ async function generateRagReport() {
   }
 }
 
-generateRagReport();
+export { generateWithRetry };

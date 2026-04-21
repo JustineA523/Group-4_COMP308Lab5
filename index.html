@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RAG Report Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Environmental Impact Report Generator</h1>
+  <p>Click the button to generate your report.</p>
+
+  <button onclick="generateReport()">Generate Report</button>
+
+  <div id="output">Output will appear here...</div>
+
+  <script>
+    async function generateReport() {
+      const output = document.getElementById("output");
+      output.innerText = "Generating...";
+
+      try {
+        const res = await fetch("/generate");
+        const data = await res.text();
+        output.innerText = data;
+      } catch (err) {
+        output.innerText = "Error generating report.";
+      }
+    }
+  </script>
+
+</body>
+</html>
