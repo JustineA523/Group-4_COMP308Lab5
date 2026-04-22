@@ -44,7 +44,7 @@ async function uploadArticlesToStore() {
       });
 
       console.log(`Uploaded file to Gemini: ${file.name}`);
-e
+
       const operation = await ai.fileSearchStores.importFile({
         fileSearchStoreName: store.name,
         fileName: file.name,
